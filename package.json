@@ -1,0 +1,30 @@
+{
+  "name": "lual-utils",
+  "version": "0.0.1",
+  "description": "This repository aims to guide a tutorial on how to create an npm module, and mainly to add useful functions that I use in my daily life in various projects.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "url": "git+https://github.com/luaalvaro/lual-utils"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint:check": "prettier --check .",
+    "lint:fix": "prettier --write ."
+  },
+  "keywords": [
+    "helpers",
+    "utils",
+    "validation cpf",
+    "whatsapp mask",
+    "máscara whatsapp"
+  ],
+  "author": "Luã Álvaro",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.3.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.2"
+  }
+}
