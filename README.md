@@ -20,6 +20,7 @@ Neste artigo eu abordo etapa por etpada sobre a construção deste pacote, desde
 
 - **Validar CPF** ✅
 - **Validar CNPJ** ✅
+- **Gerar Código Aleatório** ✅
 - Validar Email ⏱️
 - Máscara de WhatsApp ⏱️
 
@@ -31,15 +32,27 @@ Para instalar o GZAPPY, execute o seguinte comando:
 npm install lual-utils
 ```
 
-## Uso
+## Validar CPF e CNPJ
 
 ```js
 // Importação do módulo lual-utils
-import { isCpfOrCnpjValid } from "lual-utils";
+import { isCpfOrCnpjValid } from 'lual-utils'
 
-const cpf = "12345678901";
-const cnpj = "12345678901234";
+const cpf = '12345678901'
+const cnpj = '12345678901234'
 
-console.log(isCpfOrCnpjValid(cpf)); // false
-console.log(isCpfOrCnpjValid(cnpj)); // false
+console.log(isCpfOrCnpjValid(cpf)) // false
+console.log(isCpfOrCnpjValid(cnpj)) // false
+```
+
+## Gerar Código Aleatório
+
+Geração de código aleatório, para ser utilizado como token, senha, etc. Esta geração utiliza o algoritmo `Math.random()`.
+
+```js
+// Importação do módulo lual-utils
+import { genRandomStrCode } from 'lual-utils'
+
+const password = genRandomStrCode(8)
+console.log(password) // 7sa2d3f4
 ```

@@ -1,6 +1,6 @@
 {
   "name": "lual-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This repository aims to guide a tutorial on how to create an npm module, and mainly to add useful functions that I use in my daily life in various projects.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
