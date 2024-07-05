@@ -5,54 +5,84 @@
     <a href="https://www.npmjs.com/package/lual-utils"><img src="https://img.shields.io/npm/dt/lual-utils?maxAge=3600" alt="npm downloads" /></a>
 </div>
 
-## Introdução
+## Introduction 📖
 
-`lual-utils` é uma biblioteca que foi construída para criação de um artigo sobre a criação de um pacote JavaScript para publicação no NPM.
-
-<!-- // link -->
+`lual-utils` is a library that was built for creating an article about developing a JavaScript package for publication on NPM. The article is in Portuguese and can be accessed at the following link:
 
 [Artigo: Como criar um pacote JavaScript para o NPM
 ](https://gzappy.ghost.io/como-criar-um-pacote-javascript-para-o-npm-2/)
 
-Neste artigo eu abordo etapa por etpada sobre a construção deste pacote, desde a criação do projeto até a publicação no NPM.
+In this article, I cover step by step the process of building this package, from project creation to publishing on NPM. However, to make it more than just a theoretical article, I created this package with some utility functions that I use frequently in my daily life and that might be useful for you too.
 
-## Funcionalidades
+## Features 🚀
 
-- **Validar CPF** ✅
-- **Validar CNPJ** ✅
-- **Gerar Código Aleatório** ✅
-- Validar Email ⏱️
-- Máscara de WhatsApp ⏱️
+- **Validate CPF** ✅
+- **Validate CNPJ** ✅
+- **Generate Random Code** ✅
+- **Phone Number Masking for Major Countries** ✅
+- **Validate Email** ✅
+- Password Generator ⏱️
 
-## Instalação
+## Contributing 🤝
 
-Para instalar o GZAPPY, execute o seguinte comando:
+If you want to contribute to this project, feel free to fork this repository and submit a pull request. I will be happy to review and approve it.
+
+## Installation 📦
+
+To install **lual-utils**, run the following command:
 
 ```bash
 npm install lual-utils
 ```
 
-## Validar CPF e CNPJ
+## Validate CPF and CNPJ
+
+Validation of CPF and CNPJ using regular expressions and validation algorithms.
 
 ```js
-// Importação do módulo lual-utils
+// Import the lual-utils module
 import { isCpfOrCnpjValid } from 'lual-utils'
 
 const cpf = '12345678901'
 const cnpj = '12345678901234'
 
-console.log(isCpfOrCnpjValid(cpf)) // false
-console.log(isCpfOrCnpjValid(cnpj)) // false
+console.log(isCpfOrCnpjValid(cpf)) // true or false
+console.log(isCpfOrCnpjValid(cnpj)) // true or false
 ```
 
-## Gerar Código Aleatório
+## Validate Email
 
-Geração de código aleatório, para ser utilizado como token, senha, etc. Esta geração utiliza o algoritmo `Math.random()`.
+Email validation using regular expressions.
 
 ```js
-// Importação do módulo lual-utils
+// Import the lual-utils module
+import { isEmailValid } from 'lual-utils'
+
+const emailExample = 'example@email.com'
+
+console.log(isEmailValid(emailExample)) // true or false
+```
+
+## Generate Random Code
+
+Generate a random code to be used as a token, password, etc. This generation uses the `Math.random()` algorithm.
+
+```js
+// Import the lual-utils module
 import { genRandomStrCode } from 'lual-utils'
 
 const password = genRandomStrCode(8)
 console.log(password) // 7sa2d3f4
+```
+
+## Phone Number Masking
+
+Phone number masking for major countries, using regular expressions based on the country codes of the 25+ most used countries.
+
+```js
+// Import the lual-utils module
+import { setPhoneMask } from 'lual-utils'
+
+const phone = '5511999999999'
+const phoneMask = setPhoneMask(phone) // +55 (11) 99999-9999
 ```

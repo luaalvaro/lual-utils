@@ -1,6 +1,6 @@
 {
   "name": "lual-utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This repository aims to guide a tutorial on how to create an npm module, and mainly to add useful functions that I use in my daily life in various projects.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -18,7 +18,12 @@
     "utils",
     "validation cpf",
     "whatsapp mask",
-    "máscara whatsapp"
+    "máscara whatsapp",
+    "phone mask",
+    "máscara telefone",
+    "random string",
+    "random code",
+    "random token"
   ],
   "author": "Luã Álvaro",
   "license": "MIT",
