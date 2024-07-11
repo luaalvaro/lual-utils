@@ -10,7 +10,7 @@
 `lual-utils` is a library that was built for creating an article about developing a JavaScript package for publication on NPM. The article is in Portuguese and can be accessed at the following link:
 
 [Artigo: Como criar um pacote JavaScript para o NPM
-](https://gzappy.ghost.io/como-criar-um-pacote-javascript-para-o-npm-2/)
+](https://blog.gzappy.com/blog/2024/07/como-criar-um-pacote-javascript-para-o-npm)
 
 In this article, I cover step by step the process of building this package, from project creation to publishing on NPM. However, to make it more than just a theoretical article, I created this package with some utility functions that I use frequently in my daily life and that might be useful for you too.
 
@@ -21,7 +21,8 @@ In this article, I cover step by step the process of building this package, from
 - **Generate Random Code** ✅
 - **Phone Number Masking for Major Countries** ✅
 - **Validate Email** ✅
-- Password Generator ⏱️
+- **Validate URL** ✅
+- New features coming soon ⏱️
 
 ## Contributing 🤝
 
@@ -85,4 +86,25 @@ import { setPhoneMask } from 'lual-utils'
 
 const phone = '5511999999999'
 const phoneMask = setPhoneMask(phone) // +55 (11) 99999-9999
+```
+
+## Validate URL
+
+URL validation using regular expressions.
+
+```js
+// Import the lual-utils module
+import { isUrlValid } from 'lual-utils'
+
+// Validate only HTTPS URLs
+validateUrl('https://example.com', { protocols: ['https'] }) // true
+validateUrl('http://example.com', { protocols: ['https'] }) // false
+
+// Validate URLs HTTP and HTTPS without IP
+validateUrl('http://example.com', { allowIp: false }) // true
+validateUrl('http://192.168.0.1', { allowIp: false }) // false
+
+// Validate URLs HTTPS and HTTPS with IP
+validateUrl('https://192.168.0.1', { protocols: ['https'], allowIp: true }) // true
+validateUrl('http://192.168.0.1', { protocols: ['https'], allowIp: true }) // false
 ```
